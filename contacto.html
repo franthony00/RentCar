@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - RentCar Express</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Reemplazando título de texto con logo de imagen -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="RentCar Express Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="vehiculos.html">Vehículos</a></li>
+                <li><a href="reservar.html">Reservar</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+                <!-- agregando menú de usuario dinámico -->
+                <li class="user-menu"></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Formulario de Contacto -->
+    <section class="contacto-section">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <p class="contacto-intro">¿Tienes alguna pregunta? Estamos aquí para ayudarte.</p>
+            
+            <form id="contactoForm" class="contacto-form">
+                <div class="form-group">
+                    <label for="contactoNombre">Nombre Completo *</label>
+                    <input type="text" id="contactoNombre" name="contactoNombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactoCorreo">Correo Electrónico *</label>
+                    <input type="email" id="contactoCorreo" name="contactoCorreo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactoMensaje">Mensaje *</label>
+                    <textarea id="contactoMensaje" name="contactoMensaje" rows="6" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar Mensaje</button>
+            </form>
+
+            <div id="mensajeExito" class="mensaje-exito" style="display: none;">
+                <p>¡Gracias por contactarnos! Tu mensaje ha sido enviado exitosamente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 RentCar Express. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Cambiando script a módulo para Firebase -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

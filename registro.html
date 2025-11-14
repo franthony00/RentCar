@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - RentCar Express</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Reemplazando título de texto con logo de imagen -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="RentCar Express Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="vehiculos.html">Vehículos</a></li>
+                <li><a href="reservar.html">Reservar</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li class="user-menu"></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Formulario de Registro -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <h2>Crear Cuenta</h2>
+                <form id="registroForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="regNombre">Nombre Completo *</label>
+                        <input type="text" id="regNombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regCedula">Cédula *</label>
+                        <input type="text" id="regCedula" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regTelefono">Teléfono *</label>
+                        <input type="tel" id="regTelefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regCorreo">Correo Electrónico *</label>
+                        <input type="email" id="regCorreo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Contraseña *</label>
+                        <input type="password" id="regPassword" required minlength="6">
+                        <small>Mínimo 6 caracteres</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPasswordConfirm">Confirmar Contraseña *</label>
+                        <input type="password" id="regPasswordConfirm" required>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full">Registrarse</button>
+                </form>
+                <p class="auth-link">¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 RentCar Express. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Cambiando script a módulo para Firebase -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

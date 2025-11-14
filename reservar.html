@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar - RentCar Express</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Reemplazando título de texto con logo de imagen -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="RentCar Express Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="vehiculos.html">Vehículos</a></li>
+                <li><a href="reservar.html" class="active">Reservar</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <!-- agregando menú de usuario dinámico -->
+                <li class="user-menu"></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Formulario de Reserva -->
+    <section class="reserva-section">
+        <div class="container">
+            <h2>Formulario de Reserva</h2>
+            
+            <form id="reservaForm" class="reserva-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cedula">Cédula *</label>
+                    <input type="text" id="cedula" name="cedula" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="vehiculo">Vehículo Seleccionado *</label>
+                    <select id="vehiculo" name="vehiculo" required>
+                        <option value="">Seleccione un vehículo</option>
+                        <option value="Toyota Corolla">Toyota Corolla - $45/día</option>
+                        <option value="Honda Civic">Honda Civic - $50/día</option>
+                        <option value="Toyota RAV4">Toyota RAV4 - $75/día</option>
+                        <option value="Nissan X-Trail">Nissan X-Trail - $80/día</option>
+                        <option value="Mercedes-Benz C-Class">Mercedes-Benz C-Class - $150/día</option>
+                        <option value="BMW Serie 3">BMW Serie 3 - $160/día</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fechaAlquiler">Fecha de Alquiler *</label>
+                        <input type="date" id="fechaAlquiler" name="fechaAlquiler" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaDevolucion">Fecha de Devolución *</label>
+                        <input type="date" id="fechaDevolucion" name="fechaDevolucion" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Confirmar Reserva</button>
+            </form>
+
+            <!-- Resumen de Reserva -->
+            <div id="resumenReserva" class="resumen-reserva" style="display: none;">
+                <h3>Resumen de la Reserva</h3>
+                <div class="resumen-content">
+                    <p><strong>Nombre:</strong> <span id="resumenNombre"></span></p>
+                    <p><strong>Cédula:</strong> <span id="resumenCedula"></span></p>
+                    <p><strong>Vehículo:</strong> <span id="resumenVehiculo"></span></p>
+                    <p><strong>Fecha de Alquiler:</strong> <span id="resumenFechaAlquiler"></span></p>
+                    <p><strong>Fecha de Devolución:</strong> <span id="resumenFechaDevolucion"></span></p>
+                    <p><strong>Días de alquiler:</strong> <span id="resumenDias"></span></p>
+                    <p class="total"><strong>Total a pagar:</strong> $<span id="resumenTotal"></span></p>
+                </div>
+                <button onclick="location.reload()" class="btn-nueva">Nueva Reserva</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 RentCar Express. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Cambiando script a módulo para Firebase -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
