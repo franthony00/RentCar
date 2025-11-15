@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCar Express - Catálogo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Added navigation bar for app -->
+    <nav class="navbar app-navbar">
+        <div class="nav-content">
+            <div class="nav-logo-container">
+                <img src="public/logo.png" alt="RentCar Express" class="logo-image">
+            </div>
+            <div class="nav-links" id="clientNav" style="display: none;">
+                <a href="#reserva" class="nav-link">Reserva</a>
+                <a href="#vehiculos" class="nav-link">Vehículos</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+                <span id="userName" class="user-name-nav"></span>
+                <button id="logoutBtnNav" class="btn-logout-nav">Cerrar Sesión</button>
+            </div>
+            <div class="nav-links" id="developerNav" style="display: none;">
+                <span id="userNameDev" class="user-name-nav"></span>
+                <span id="userRole" class="user-role"></span>
+                <button id="logoutBtnNavDev" class="btn-logout-nav">Cerrar Sesión</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Client View -->
+    <div id="clientView" class="main-content" style="display: none;">
+        <div class="container">
+            <!-- Reservation Form Section -->
+            <section id="reserva" class="reservation-section">
+                <h2 class="section-title">Reserva tu Vehículo</h2>
+                <p class="section-subtitle">Completa el formulario para reservar tu vehículo ideal</p>
+                
+                <form id="reservationForm" class="reservation-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="clientName">Nombre Completo</label>
+                            <input type="text" id="clientName" required placeholder="Juan Pérez">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="clientId">Cédula</label>
+                            <input type="text" id="clientId" required placeholder="402-1234567-8">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupDate">Fecha de Alquiler</label>
+                            <input type="date" id="pickupDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="returnDate">Fecha de Devolución</label>
+                            <input type="date" id="returnDate" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="selectedVehicle">Seleccionar Vehículo</label>
+                        <select id="selectedVehicle" required>
+                            <option value="">Seleccione un vehículo...</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Confirmar Reserva</button>
+                </form>
+            </section>
+
+            <!-- Our Vehicles Section with filter buttons -->
+            <section id="vehiculos" class="vehicles-section">
+                <h2 class="section-title">Nuestros Vehículos</h2>
+                <p class="section-subtitle">Explora nuestra flota de vehículos disponibles</p>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="todos">Todos</button>
+                    <button class="filter-btn" data-filter="economico">Económico</button>
+                    <button class="filter-btn" data-filter="suv">SUV</button>
+                    <button class="filter-btn" data-filter="lujo">Lujo</button>
+                </div>
+                
+                <div id="vehicleGrid" class="vehicle-grid"></div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contacto" class="contact-section">
+                <h2 class="section-title">Contáctanos</h2>
+                <p class="section-subtitle">¿Tienes preguntas? Estamos aquí para ayudarte</p>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div>
+                                <h3>Teléfono</h3>
+                                <p>+1 (809) 555-1234</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div>
+                                <h3>Email</h3>
+                                <p>info@rentcarexpress.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <h3>Dirección</h3>
+                                <p>Av. Principal #123, Santo Domingo</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <span class="contact-icon">⏰</span>
+                            <div>
+                                <h3>Horario</h3>
+                                <p>Lunes a Domingo: 8:00 AM - 8:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="contactName">Nombre</label>
+                            <input type="text" id="contactName" required placeholder="Tu nombre">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" required placeholder="tu@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">Mensaje</label>
+                            <textarea id="contactMessage" rows="4" required placeholder="Escribe tu mensaje..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Developer View -->
+    <div id="developerView" class="main-content" style="display: none;">
+        <div class="container">
+            <div class="admin-header">
+                <h2 class="section-title">Panel de Administración</h2>
+                <button id="addVehicleBtn" class="btn-primary">+ Agregar Vehículo</button>
+            </div>
+            
+            <div id="vehicleTable" class="vehicle-table"></div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Vehicle Modal -->
+    <div id="vehicleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Agregar Vehículo</h2>
+            <form id="vehicleForm">
+                <div class="form-group">
+                    <label for="vehicleName">Marca y Modelo</label>
+                    <input type="text" id="vehicleName" required placeholder="Toyota Corolla">
+                </div>
+                
+                <div class="form-group">
+                    <label for="vehicleYear">Año</label>
+                    <input type="number" id="vehicleYear" required placeholder="2024" min="2022" max="2024">
+                </div>
+                
+                <div class="form-group">
+                    <label for="vehiclePrice">Precio por día ($)</label>
+                    <input type="number" id="vehiclePrice" required placeholder="50" min="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="vehicleCategory">Categoría</label>
+                    <select id="vehicleCategory" required>
+                        <option value="economico">Económico</option>
+                        <option value="suv">SUV</option>
+                        <option value="lujo">Lujo</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="vehicleImage">URL de Imagen</label>
+                    <input type="url" id="vehicleImage" required placeholder="https://...">
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="submit" class="btn-primary">Guardar</button>
+                    <button type="button" id="cancelBtn" class="btn-secondary">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Reservation Summary Modal -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-content reservation-summary">
+            <h2>Resumen de la Reserva</h2>
+            <div id="reservationSummary" class="summary-content"></div>
+            <button id="newReservationBtn" class="btn-primary">NUEVA RESERVA</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

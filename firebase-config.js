@@ -6,13 +6,13 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB0Yss1GzZKpa6e_PHjfDi_g8sytUZG4_U",
-  authDomain: "rentcar-5c7f4.firebaseapp.com",
-  projectId: "rentcar-5c7f4",
-  storageBucket: "rentcar-5c7f4.firebasestorage.app",
-  messagingSenderId: "549483981054",
-  appId: "1:549483981054:web:d5ace14fc1626d3eb15daf",
-  measurementId: "G-KLERDRSLPK"
+  apiKey: "AIzaSyAB7RJVXyCPuuy7KOMZbnsxzivQvD4zoVc",
+  authDomain: "aerolinea-3d642.firebaseapp.com",
+  projectId: "aerolinea-3d642",
+  storageBucket: "aerolinea-3d642.firebasestorage.app",
+  messagingSenderId: "196978942129",
+  appId: "1:196978942129:web:aee1faea763d62f14a4290",
+  measurementId: "G-0EG2CBCLMB"
 };
 
 // Initialize Firebase

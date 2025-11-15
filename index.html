@@ -3,80 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RentCar Express - Alquiler de Vehículos</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>RentCar Express - Renta de Vehículos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!-- Navegación -->
+<body class="landing-page">
+    <!-- Added navigation bar with logo -->
     <nav class="navbar">
-        <div class="container">
-            <!-- Reemplazando título de texto con logo de imagen -->
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="RentCar Express Logo">
-                </a>
+        <div class="nav-content">
+            <div class="nav-logo-container">
+                <img src="public/logo.png" alt="RentCar Express" class="logo-image">
+                <img src="public/logo2.png" alt="RentCar Express" class="logo2-image">
             </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Inicio</a></li>
-                <li><a href="vehiculos.html">Vehículos</a></li>
-                <li><a href="reservar.html">Reservar</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <!-- agregando menú de usuario dinámico -->
-                <li class="user-menu"></li>
-            </ul>
+            
+            <div class="nav-links">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#beneficios" class="nav-link">Beneficios</a>
+                <a href="#auth-section" class="nav-link btn-nav-auth">Iniciar Sesión</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h2>Alquila tu vehículo ideal</h2>
-            <p>La mejor experiencia en alquiler de autos</p>
-            <a href="vehiculos.html" class="btn-primary">Ver Vehículos</a>
+    <!-- Added hero section with carousel -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">Renta el Vehículo Perfecto para tu Aventura</h1>
+                <p class="hero-subtitle">Amplia flota de vehículos, precios competitivos y servicio excepcional</p>
+                <a href="#auth-section" class="btn-hero">Comienza Ahora</a>
+            </div>
+        </div>
+        <div class="carousel">
+            <div class="carousel-track" id="carouselTrack">
+                <img src="img/mazda-3-sedan.jpg" alt="mazda-3-sedan" class="carousel-image active">
+                <img src="img/hyundai-tucson-suv.png" alt="Hyundai Tucson" class="carousel-image">
+                <img src="img/mercedes-c-class.jpg" alt="Mercedes C-Class" class="carousel-image">
+                <img src="img/bmw-x5.jpg" alt="BMW X5" class="carousel-image">
+                <img src="img/audi-a6.jpg" alt="Audi A6" class="carousel-image">
+            </div>
+            <button class="carousel-btn carousel-prev" id="prevBtn">❮</button>
+            <button class="carousel-btn carousel-next" id="nextBtn">❯</button>
+            <div class="carousel-dots" id="carouselDots"></div>
         </div>
     </section>
 
-    <!-- Sección Bienvenida -->
-    <section class="welcome">
+    <!-- Added benefits section -->
+    <section id="beneficios" class="benefits-section">
         <div class="container">
-            <h2>Bienvenido a RentCar Express</h2>
-            <p>Somos la empresa líder en alquiler de vehículos, ofreciendo un servicio de calidad con la mejor flota de autos disponibles para ti.</p>
-        </div>
-    </section>
-
-    <!-- Beneficios -->
-    <section class="beneficios">
-        <div class="container">
-            <h2>Nuestros Beneficios</h2>
-            <div class="beneficios-grid">
-                <div class="beneficio-card">
-                    <div class="icon">⚡</div>
-                    <h3>Rapidez</h3>
-                    <p>Proceso de alquiler rápido y sencillo. Reserva en minutos y recoge tu vehículo sin complicaciones.</p>
+            <h2 class="section-title">Nuestros Beneficios</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3 class="benefit-title">Rapidez</h3>
+                    <p class="benefit-description">Proceso de alquiler rápido y sencillo. Reserva en minutos y recoge tu vehículo sin complicaciones.</p>
                 </div>
-                <div class="beneficio-card">
-                    <div class="icon">🚗</div>
-                    <h3>Variedad de Vehículos</h3>
-                    <p>Amplia selección de autos desde económicos hasta vehículos de lujo para cada necesidad.</p>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚗</div>
+                    <h3 class="benefit-title">Variedad de Vehículos</h3>
+                    <p class="benefit-description">Amplia selección de autos desde económicos hasta vehículos de lujo para cada necesidad.</p>
                 </div>
-                <div class="beneficio-card">
-                    <div class="icon">👥</div>
-                    <h3>Atención Personalizada</h3>
-                    <p>Equipo profesional disponible 24/7 para brindarte la mejor experiencia de servicio.</p>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">👥</div>
+                    <h3 class="benefit-title">Atención Personalizada</h3>
+                    <p class="benefit-description">Equipo profesional disponible 24/7 para brindarte la mejor experiencia de servicio.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Added authentication section -->
+    <section id="auth-section" class="auth-section">
+        <div class="container">
+            <div class="auth-cards-container">
+                <!-- Login Card -->
+                <div class="auth-card-landing" id="loginCard">
+                    <h2>Iniciar Sesión</h2>
+                    <form id="loginForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="loginEmail">Correo Electrónico</label>
+                            <input type="email" id="loginEmail" required placeholder="tu@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="loginPassword">Contraseña</label>
+                            <input type="password" id="loginPassword" required placeholder="••••••••">
+                        </div>
+                        
+                        <div id="loginError" class="error-message"></div>
+                        
+                        <button type="submit" class="btn-primary">Iniciar Sesión</button>
+                    </form>
+                    <p class="auth-toggle">¿No tienes cuenta? <span id="showRegister" class="auth-toggle-link">Regístrate aquí</span></p>
+                </div>
+
+                <!-- Register Card -->
+                <div class="auth-card-landing" id="registerCard" style="display: none;">
+                    <h2>Crear Cuenta</h2>
+                    <form id="registerForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="registerName">Nombre Completo</label>
+                            <input type="text" id="registerName" required placeholder="Juan Pérez">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="registerEmail">Correo Electrónico</label>
+                            <input type="email" id="registerEmail" required placeholder="tu@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="registerPassword">Contraseña</label>
+                            <input type="password" id="registerPassword" required placeholder="••••••••">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="registerConfirmPassword">Confirmar Contraseña</label>
+                            <input type="password" id="registerConfirmPassword" required placeholder="••••••••">
+                        </div>
+                        
+                        <div id="registerError" class="error-message"></div>
+                        <div id="registerSuccess" class="success-message"></div>
+                        
+                        <button type="submit" class="btn-primary">Crear Cuenta</button>
+                    </form>
+                    <p class="auth-toggle">¿Ya tienes cuenta? <span id="showLogin" class="auth-toggle-link">Inicia sesión aquí</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Added footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 RentCar Express. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- Agregando scripts de Firebase y main.js como módulo -->
-    <script type="module" src="js/main.js"></script>
+    <!-- Modal for role selection -->
+    <div id="roleModal" class="modal">
+        <div class="modal-content">
+            <h2>¿Cuál es tu rol?</h2>
+            <p>Selecciona cómo deseas acceder al sistema</p>
+            <div class="role-buttons">
+                <button id="clientBtn" class="role-btn">
+                    <span class="role-icon">👤</span>
+                    <span class="role-title">Cliente</span>
+                    <span class="role-desc">Explorar y reservar vehículos</span>
+                </button>
+                <button id="developerBtn" class="role-btn">
+                    <span class="role-icon">⚙️</span>
+                    <span class="role-title">Desarrollador</span>
+                    <span class="role-desc">Administrar catálogo</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="landing.js"></script>
 </body>
 </html>
