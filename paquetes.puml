@@ -1,0 +1,34 @@
+@startuml
+title Rencard Xpreess - Paquetes (simple)
+
+package "UI" {
+  [Web/App]
+}
+
+package "Backend API" {
+  package "Auth" as AUTH
+  package "Reservas" as RES
+  package "Pagos" as PAY
+  package "Notificaciones" as NOTI
+  package "Shared" as SH
+}
+
+package "Reutilizables (COTS/CYD)" <<external>> {
+  [Firebase/Auth0]
+  [Stripe/PayPal]
+  [Twilio/SendGrid]
+}
+
+[Web/App] --> AUTH
+[Web/App] --> RES
+[Web/App] --> PAY
+
+AUTH ..> [Firebase/Auth0] : login/token
+PAY  ..> [Stripe/PayPal] : pagos
+NOTI ..> [Twilio/SendGrid] : sms/email
+
+RES --> SH : validaciones
+PAY --> SH : errores/logs
+NOTI --> SH
+
+@enduml
